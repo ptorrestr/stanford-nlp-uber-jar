@@ -1,0 +1,34 @@
+plugins {
+  id 'java' // or 'groovy' Must be explicitly applied
+  id 'maven'
+  id 'com.github.johnrengelman.shadow' version '1.2.0'
+}
+
+group = 'neel.kanopy'
+description = """ NEEL Challange """
+version = '3.5.1'
+
+/**** DEPENDENCY *****/
+dependencies {
+  compile 'edu.stanford.nlp:stanford-corenlp:3.5.1'
+  compile 'edu.stanford.nlp:stanford-corenlp:3.5.1:models'
+}
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+shadowJar {
+  classifier = ''
+  relocate 'org.w3c.dom', 'shaded_xml_apis_1_3.org.w3c.dom'
+  relocate 'javax.xml.parsers', 'shaded_xml_apis_1_3.javax.xml.parsers'
+  relocate 'org.apache.xmlcommons', 'shaded_xml_apis_1_3.org.apache.xmlcommons'
+  relocate 'org.xml.sax', 'shaded_xml_apis_1_3.org.xml.sax'
+}
+
+//install.dependsOn ':shadowJar'
+
+artifacts {
+  archives shadowJar
+}

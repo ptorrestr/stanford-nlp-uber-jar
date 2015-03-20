@@ -23,7 +23,6 @@ shadowJar {
   classifier = ''
   relocate 'org.w3c.dom', 'shaded_xml_apis_1_3.org.w3c.dom'
   relocate 'javax.xml.parsers', 'shaded_xml_apis_1_3.javax.xml.parsers'
-  relocate 'org.apache.xmlcommons', 'shaded_xml_apis_1_3.org.apache.xmlcommons'
   relocate 'org.xml.sax', 'shaded_xml_apis_1_3.org.xml.sax'
 }
 

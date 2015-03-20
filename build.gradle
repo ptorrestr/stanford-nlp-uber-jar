@@ -21,9 +21,10 @@ repositories {
 
 shadowJar {
   classifier = ''
-  relocate 'org.w3c.dom', 'shaded_xml_apis_1_3.org.w3c.dom'
-  relocate 'javax.xml.parsers', 'shaded_xml_apis_1_3.javax.xml.parsers'
-  relocate 'org.xml.sax', 'shaded_xml_apis_1_3.org.xml.sax'
+  relocate 'org.apache', 'shared_xml_apis_1.3.org.apache'
+  relocate 'org.w3c', 'shaded_xml_apis_1_3.org.w3c'
+  relocate 'javax.xml', 'shaded_xml_apis_1_3.javax.xml'
+  relocate 'org.xml', 'shaded_xml_apis_1_3.org.xml'
 }
 
 //install.dependsOn ':shadowJar'
